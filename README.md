@@ -41,3 +41,21 @@ Clase `Harl` con niveles de log (`debug`, `info`, etc.). Usa punteros a funcione
 ### ex06: **Harl filter**
 
 Filtra los mensajes de Harl según el nivel indicado usando `switch`.
+
+## 🧮 MÓDULO C++02 – Polimorfismo ad-hoc y sobrecarga de operadores
+
+### ex00: **My First Class in Orthodox Canonical Form**
+
+Implementación de una clase en **forma canónica ortodoxa**, que representa un número de punto fijo con 8 bits fraccionales. Introduce constructor por defecto, de copia, operador de asignación y destructor. Incluye métodos para obtener y establecer el valor bruto (`getRawBits`, `setRawBits`).
+
+### ex01: **Towards a more useful fixed-point number class**
+
+Extensión de la clase anterior para permitir la conversión entre tipos (`int` y `float`). Añade constructores adicionales y funciones como `toInt()` y `toFloat()`. También se sobrecarga el operador `<<` para imprimir fácilmente los valores.
+
+### ex02: **Now we’re talking**
+
+Se implementa la **sobrecarga de operadores** aritméticos (`+`, `-`, `*`, `/`), de comparación (`>`, `<`, `>=`, `<=`, `==`, `!=`) e incrementales (`++`, `--`, en versiones pre y post). Además, se incluyen métodos estáticos `min` y `max` para comparar dos instancias.
+
+### ex03: **BSP (Binary Space Partitioning)**
+
+Implementación de una clase `Point` (también en forma canónica) que usa números de punto fijo para representar coordenadas 2D. Se crea una función `bsp(a, b, c, point)` que determina si un punto está dentro de un triángulo usando barycentric coordinates. Ideal para introducir técnicas geométricas básicas en C++.
