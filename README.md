@@ -59,3 +59,22 @@ Se implementa la **sobrecarga de operadores** aritméticos (`+`, `-`, `*`, `/`),
 ### ex03: **BSP (Binary Space Partitioning)**
 
 Implementación de una clase `Point` (también en forma canónica) que usa números de punto fijo para representar coordenadas 2D. Se crea una función `bsp(a, b, c, point)` que determina si un punto está dentro de un triángulo usando barycentric coordinates. Ideal para introducir técnicas geométricas básicas en C++.
+
+
+## 🧬 MÓDULO C++03 – Herencia
+
+### ex00: Aaaaand... OPEN!
+
+Clase ClapTrap con atributos básicos (name, hitPoints = 10, energyPoints = 10, attackDamage = 0). Métodos: attack, takeDamage, beRepaired. Incluye mensajes en constructores, destructores y acciones.
+
+### ex01: Serena, my love!
+
+Clase ScavTrap que hereda de ClapTrap. Inicializa valores distintos (hitPoints = 100, energyPoints = 50, attackDamage = 20). Añade método especial guardGate(). Imprime mensajes personalizados. Demuestra correctamente la cadena de construcción/destrucción.
+
+### ex02: Repetitive work
+
+Clase FragTrap, también derivada de ClapTrap. Inicializa con (hitPoints = 100, energyPoints = 100, attackDamage = 30). Incluye método especial highFivesGuys(). Nuevos mensajes para construcción/destrucción.
+
+### ex03: Now it’s weird!
+
+Clase DiamondTrap, que hereda de FragTrap y ScavTrap (herencia múltiple). Atributos combinados de ambas clases. Añade su propio atributo name y redefine ClapTrap::name como <name>_clap_name. Usa ScavTrap::attack() y añade método whoAmI() que imprime su nombre y el del ClapTrap.
