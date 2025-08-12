@@ -42,6 +42,8 @@ Clase `Harl` con niveles de log (`debug`, `info`, etc.). Usa punteros a funcione
 
 Filtra los mensajes de Harl según el nivel indicado usando `switch`.
 
+---
+
 ## 🧮 MÓDULO C++02 – Polimorfismo ad-hoc y sobrecarga de operadores
 
 ### ex00: **My First Class in Orthodox Canonical Form**
@@ -60,6 +62,7 @@ Se implementa la **sobrecarga de operadores** aritméticos (`+`, `-`, `*`, `/`),
 
 Implementación de una clase `Point` (también en forma canónica) que usa números de punto fijo para representar coordenadas 2D. Se crea una función `bsp(a, b, c, point)` que determina si un punto está dentro de un triángulo usando barycentric coordinates. Ideal para introducir técnicas geométricas básicas en C++.
 
+---
 
 ## 🧬 MÓDULO C++03 – Herencia
 
@@ -78,6 +81,8 @@ Clase FragTrap, también derivada de ClapTrap. Inicializa con (hitPoints = 100, 
 ### ex03: Now it’s weird!
 
 Clase DiamondTrap, que hereda de FragTrap y ScavTrap (herencia múltiple). Atributos combinados de ambas clases. Añade su propio atributo name y redefine ClapTrap::name como <name>_clap_name. Usa ScavTrap::attack() y añade método whoAmI() que imprime su nombre y el del ClapTrap.
+
+---
 
 ## 🧠 MÓDULO C++04 – Polimorfismo, Clases Abstractas e Interfaces
 
