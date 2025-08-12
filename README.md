@@ -78,3 +78,55 @@ Clase FragTrap, también derivada de ClapTrap. Inicializa con (hitPoints = 100, 
 ### ex03: Now it’s weird!
 
 Clase DiamondTrap, que hereda de FragTrap y ScavTrap (herencia múltiple). Atributos combinados de ambas clases. Añade su propio atributo name y redefine ClapTrap::name como <name>_clap_name. Usa ScavTrap::attack() y añade método whoAmI() que imprime su nombre y el del ClapTrap.
+
+
+## 🧠 MÓDULO C++04 – Polimorfismo, Clases Abstractas e Interfaces
+
+### ex00: Polimorfismo básico
+
+* Clases `Animal`, `Dog`, `Cat`.
+* `Animal` tiene `std::string type` y método virtual `makeSound()`.
+* `Dog` y `Cat` sobrescriben `makeSound()` con sus sonidos correspondientes.
+* Se prueba el **polimorfismo** con punteros a `Animal*` que apuntan a objetos `Dog` o `Cat`.
+* Se incluye también `WrongAnimal` y `WrongCat` para mostrar qué ocurre sin métodos `virtual`.
+
+---
+
+### ex01: Brainstorming
+
+* Se añade clase `Brain`, que contiene un array de 100 ideas.
+* `Dog` y `Cat` ahora contienen un puntero a `Brain` (`Brain* _brain`).
+* Constructor crea un `Brain` con `new`; destructor lo elimina con `delete`.
+* Se prueba que al eliminar objetos derivados desde punteros a `Animal*`, se llama correctamente al destructor.
+* Se implementa y prueba la **copia profunda (`deep copy`)** de `Dog` y `Cat`.
+
+---
+
+### ex02: Clase abstracta
+
+* Se convierte `Animal` en una **clase abstracta** añadiendo un método puramente virtual: `makeSound() = 0`.
+* Ya no es posible instanciar `Animal` directamente.
+* Se renombra a `AAnimal` como convención opcional.
+* Todas las clases derivadas deben implementar `makeSound()`.
+
+---
+
+### ex03: Interfaces y recapitulación
+
+* Se implementa el sistema de materias mágicas tipo RPG:
+
+  * `AMateria` es clase abstracta que define `clone()` y `use()`.
+  * `Ice` y `Cure` heredan de `AMateria` y sobreescriben esos métodos.
+* Se define la **interfaz `ICharacter`** y su implementación concreta `Character`:
+
+  * Tiene un inventario de 4 materias.
+  * Métodos: `equip()`, `unequip()`, `use()`, `getName()`.
+  * Se implementa **copia profunda del inventario**.
+* También se implementa la interfaz `IMateriaSource` y su clase `MateriaSource`:
+
+  * Aprende materias (clonadas) y crea nuevas a partir de su tipo.
+* El `main()` simula un uso completo del sistema:
+
+  * Crear fuente de materias, aprender Ice y Cure.
+  * Crear un personaje, equiparlo y usar materias sobre otro personaje.
+* Se exige evitar memory leaks y gestionar la memoria manualmente.
