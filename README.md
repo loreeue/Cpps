@@ -114,3 +114,42 @@ Clase DiamondTrap, que hereda de FragTrap y ScavTrap (herencia múltiple). Atrib
 * `ICharacter` define la interfaz del personaje; `Character` la implementa con inventario dinámico.
 * `IMateriaSource` y `MateriaSource` permiten crear materias a partir de una "plantilla".
 * Se requiere **copias profundas**, evitar memory leaks y seguir forma canónica.
+
+---
+
+## 🧾 MÓDULO C++05 – Excepciones, jerarquías y polimorfismo
+
+### ex00: Mommy, when I grow up, I want to be a bureaucrat!
+
+* Se implementa la clase `Bureaucrat`, con un **nombre constante** y un **grado** comprendido entre 1 (máximo rango) y 150 (mínimo).
+* Se introducen excepciones personalizadas (`GradeTooHighException`, `GradeTooLowException`) para proteger los invariantes de la clase.
+* Se implementan los métodos `gradeUp()` y `gradeDown()`, teniendo en cuenta que **un número menor representa un rango más alto**.
+* Se sobrecarga el operador `<<` para mostrar el estado del objeto.
+* El ejercicio refuerza el uso de `try/catch` y la validación estricta de estados.
+
+### ex01: Form up, maggots!
+
+* Se introduce la clase `Form`, que interactúa con `Bureaucrat`.
+* Un formulario tiene un nombre constante, un estado de firma y grados mínimos para firmar y ejecutar.
+* Se implementa el método `beSigned()` que puede lanzar excepciones si el `Bureaucrat` no tiene suficiente rango.
+* Se añade `Bureaucrat::signForm()` para encapsular la lógica de firma y el manejo de errores.
+* Este ejercicio trabaja la **colaboración entre clases** y la propagación de excepciones.
+
+### ex02: No, you need form 28B, not 28C...
+
+* `Form` se convierte en una **clase abstracta (`AForm`)**, con métodos virtuales.
+* Se implementan tres formularios concretos:
+
+  * `ShrubberyCreationForm`: crea un archivo con árboles ASCII.
+  * `RobotomyRequestForm`: simula una robotomización con un 50% de éxito.
+  * `PresidentialPardonForm`: concede un indulto presidencial.
+* Cada formulario sobrescribe el método `execute()`, demostrando **polimorfismo dinámico**.
+* Se introduce `Bureaucrat::executeForm()`, que trabaja con referencias a `AForm`.
+* Se enfatiza el uso de **destructores virtuales** para evitar undefined behavior al borrar objetos derivados mediante punteros base.
+
+### ex03: At least this beats coffee-making
+
+* Se implementa la clase `Intern`, responsable de crear formularios a partir de un nombre y un target.
+* `Intern::makeForm()` devuelve un puntero a `AForm`, sin exponer las clases concretas al código cliente.
+* Se aplica un **patrón Factory simplificado**, evitando estructuras largas de `if/else`.
+* Este ejercicio refuerza el **desacoplamiento**, el uso de abstracciones y el diseño orientado a responsabilidades.
