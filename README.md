@@ -156,53 +156,25 @@ Clase DiamondTrap, que hereda de FragTrap y ScavTrap (herencia múltiple). Atrib
 
 ---
 
-## 🔄 MÓDULO C++06 – Casts, conversión y RTTI
+## 🔄 MÓDULO C++06 – Casts y conversión de tipos
 
 ### ex00: **Conversion of scalar types**
 
-* Se implementa la clase `ScalarConverter`, **no instanciable**, con un único método estático `convert(std::string)`.
-* Detecta el tipo real de un literal pasado como string (`char`, `int`, `float`, `double`).
-* Convierte explícitamente el valor a los otros tipos usando **casts de C++** (`static_cast`).
-* Maneja correctamente:
-
-  * Literales normales (`42`, `4.2f`, `0.0`)
-  * **Pseudo-literales** (`nan`, `nanf`, `+inf`, `-inff`, etc.)
-* Muestra mensajes claros cuando una conversión es imposible o no displayable.
-* Refuerza la diferencia entre **conversión semánticamente válida** e **imposible**.
-
-📌 Conceptos clave:
-`static_cast`, límites numéricos, detección de tipo, conversiones seguras.
+* Clase `ScalarConverter` no instanciable con método estático `convert`.
+* Detecta el tipo real de un literal (`char`, `int`, `float`, `double`).
+* Convierte explícitamente a los otros tipos usando **casts de C++**.
+* Maneja pseudo-literales (`nan`, `inf`, `-inff`) y errores de conversión.
 
 ### ex01: **Serialization**
 
-* Se implementa la clase `Serializer`, también **no instanciable**, con métodos estáticos:
-
-  * `serialize(Data*)` → `uintptr_t`
-  * `deserialize(uintptr_t)` → `Data*`
-* Se demuestra cómo convertir un puntero a un entero sin perder información.
-* Se utiliza **`reinterpret_cast`**, entendiendo sus riesgos y su propósito.
-* Se valida que el puntero deserializado es exactamente el mismo que el original.
-* La estructura `Data` debe contener datos reales (no vacía).
-
-📌 Conceptos clave:
-`reinterpret_cast`, representación de memoria, punteros ↔ enteros.
+* Clase `Serializer` no instanciable.
+* Convierte un puntero a `uintptr_t` y viceversa.
+* Uso controlado de `reinterpret_cast`.
+* Verifica que el puntero serializado y deserializado coinciden.
 
 ### ex02: **Identify real type**
 
-* Se crea una jerarquía simple:
-
-  * Clase base `Base` con **destructor virtual**
-  * Clases derivadas `A`, `B` y `C`
-* Se implementa una función `generate()` que crea aleatoriamente un objeto derivado.
-* Se identifica el tipo real del objeto usando:
-
-  * `identify(Base*)`
-  * `identify(Base&)`
-* **Uso obligatorio de `dynamic_cast`**, sin `typeid` ni `<typeinfo>`.
-* Se demuestra la diferencia entre:
-
-  * cast dinámico con punteros (puede devolver `NULL`)
-  * cast dinámico con referencias (lanza excepción)
-
-📌 Conceptos clave:
-`dynamic_cast, RTTI, polimorfismo real, seguridad en tiempo de ejecución.
+* Jerarquía simple: `Base` → `A`, `B`, `C`.
+* Creación aleatoria de objetos derivados.
+* Identificación del tipo real usando `dynamic_cast`.
+* Diferencia entre cast con punteros y referencias.
