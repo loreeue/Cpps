@@ -178,3 +178,34 @@ Clase DiamondTrap, que hereda de FragTrap y ScavTrap (herencia múltiple). Atrib
 * Creación aleatoria de objetos derivados.
 * Identificación del tipo real usando `dynamic_cast`.
 * Diferencia entre cast con punteros y referencias.
+
+---
+
+## 🧩 MÓDULO C++07 – Templates
+
+Este módulo introduce el uso de **templates en C++98**, permitiendo escribir código **genérico, reutilizable y seguro en tiempo de compilación**. Se trabajan tanto **funciones template** como **templates de clases**, sin usar STL y respetando la forma canónica ortodoxa cuando aplica.
+
+### ex00: **Start with a few functions**
+
+* Implementación de funciones template `swap`, `min` y `max`.
+* Funcionan con cualquier tipo que soporte operadores de comparación.
+* Si los valores son iguales, `min` y `max` devuelven el segundo parámetro.
+* Los templates se definen **obligatoriamente en el header**.
+* Introduce resolución de templates en **tiempo de compilación**.
+
+### ex01: **Iter**
+
+* Implementación de la función template `iter`.
+* Aplica una función a cada elemento de un array.
+* Soporta arrays **const y no const**.
+* La función pasada como parámetro puede recibir referencias const o no const.
+* Refuerza el paso de funciones genéricas como argumentos.
+
+### ex02: **Array**
+
+* Implementación de una **clase template `Array<T>`**.
+* Gestión dinámica de memoria usando `new[]` (sin STL).
+* Constructor por defecto, constructor con tamaño, copia profunda y operador de asignación.
+* Sobrecarga del operador `[]` con **control de límites** (lanza `std::exception`).
+* Método `size()` constante que devuelve el número de elementos.
+* Refuerza diseño seguro de contenedores genéricos y manejo correcto de memoria.
