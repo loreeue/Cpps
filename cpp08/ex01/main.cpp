@@ -6,7 +6,7 @@
 /*   By: loruzqui <loruzqui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 12:14:32 by loruzqui          #+#    #+#             */
-/*   Updated: 2026/01/09 15:24:51 by loruzqui         ###   ########.fr       */
+/*   Updated: 2026/01/10 15:17:59 by loruzqui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(void)
 			std::cout << std::endl << YELLOW << "print span values" << RESET << std::endl;
 			sp.printSpan();
 
-			std::cout << std::endl << YELLOW << "try shortest and logest" << RESET << std::endl;
+			std::cout << std::endl << YELLOW << "try shortest and longest" << RESET << std::endl;
 			std::cout << sp.shortestSpan() << std::endl; //9 - 11 = 2
 			std::cout << sp.longestSpan() << std::endl; //11 - 3 = 14
 		}
