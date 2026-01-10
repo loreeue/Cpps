@@ -209,3 +209,32 @@ Este módulo introduce el uso de **templates en C++98**, permitiendo escribir c�
 * Sobrecarga del operador `[]` con **control de límites** (lanza `std::exception`).
 * Método `size()` constante que devuelve el número de elementos.
 * Refuerza diseño seguro de contenedores genéricos y manejo correcto de memoria.
+
+
+---
+
+## 📦 MÓDULO C++08 – STL, iteradores y algoritmos
+
+Este módulo introduce el uso de la **STL** y enseña a combinar **contenedores**, **iteradores** y **algoritmos** para escribir código genérico y reutilizable.
+
+### ex00: **Easy find**
+
+* Función template `easyfind` para buscar un `int` en un contenedor STL.
+* Uso obligatorio de `std::find`.
+* Demuestra algoritmos genéricos independientes del contenedor.
+
+### ex01: **Span**
+
+* Clase `Span` que almacena hasta `N` enteros.
+* Cálculo del `shortestSpan` y `longestSpan`.
+* Uso de algoritmos STL (`std::sort`, `std::min_element`, `std::max_element`).
+* Método `addRange` para añadir múltiples valores usando iteradores.
+* Pruebas con grandes volúmenes de datos.
+
+### ex02: **MutantStack**
+
+* Clase `MutantStack` que hereda de `std::stack`.
+* Mantiene el comportamiento LIFO original.
+* Añade iteradores (`begin`, `end`, etc.).
+* Permite recorrer la pila como un contenedor STL estándar.
+* Comparación con `std::list`.
