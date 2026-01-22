@@ -238,3 +238,52 @@ Este módulo introduce el uso de la **STL** y enseña a combinar **contenedores*
 * Añade iteradores (`begin`, `end`, etc.).
 * Permite recorrer la pila como un contenedor STL estándar.
 * Comparación con `std::list`.
+
+---
+
+## 🧠 MÓDULO C++09 – STL avanzada y rendimiento
+
+Este módulo consolida el uso **real y combinado de la STL en C++98**, haciendo hincapié en la **elección correcta de contenedores**, el uso de **algoritmos estándar**, el **parsing y validación de entradas**, y la **medición de rendimiento** entre distintas estructuras de datos.
+
+### ex00: **Bitcoin Exchange**
+
+* Programa que calcula el valor de una cantidad de **bitcoin** en una fecha concreta.
+* Uso de una base de datos histórica en formato **CSV**.
+* Parsing robusto de fechas (`YYYY-MM-DD`) y valores numéricos.
+* Validación estricta de errores:
+
+  * Fechas inválidas.
+  * Valores negativos o fuera de rango.
+* Uso de **contenedores asociativos ordenados** para:
+
+  * Buscar la fecha exacta.
+  * O seleccionar la **fecha válida más cercana inferior** si no existe coincidencia.
+* Refuerza el manejo de errores y el uso correcto de la STL.
+
+### ex01: **Reverse Polish Notation**
+
+* Evaluador de expresiones matemáticas en **notación polaca inversa (RPN)**.
+* Uso de un contenedor tipo **stack** para gestionar operandos.
+* Soporte de operaciones: `+`, `-`, `*`, `/`.
+* Validación estricta de la expresión:
+
+  * No se permiten paréntesis.
+  * No se permiten números decimales.
+* Gestión correcta de errores en tiempo de ejecución.
+* Refuerza el pensamiento algorítmico y el uso de estructuras LIFO.
+
+### ex02: **PmergeMe**
+
+* Implementación del algoritmo **Ford-Johnson (merge-insert sort)**.
+* Ordena secuencias de **enteros positivos** pasadas por línea de comandos.
+* Uso obligatorio de **dos contenedores distintos** para comparar rendimiento.
+* El programa:
+
+  * Muestra la secuencia antes y después del ordenado.
+  * Mide y muestra el **tiempo de ejecución** de cada contenedor.
+* Capaz de manejar al menos **3000 elementos**.
+* Refuerza:
+
+  * Análisis de complejidad.
+  * Comparación de estructuras de datos.
+  * Medición precisa de rendimiento.
