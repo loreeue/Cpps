@@ -6,7 +6,7 @@
 /*   By: loruzqui <loruzqui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 18:40:54 by loruzqui          #+#    #+#             */
-/*   Updated: 2026/01/03 16:52:00 by loruzqui         ###   ########.fr       */
+/*   Updated: 2026/01/07 17:50:29 by loruzqui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ class Array
 		Array &operator=(const Array &copy);
 		~Array(void);
 
-		T	&operator[](unsigned int i);
+		T		&operator[](unsigned int i);
+		const T	&operator[](unsigned int i) const;
 		unsigned int	size() const;
 
 		class OutOfBoundsException: public std::exception

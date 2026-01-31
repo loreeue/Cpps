@@ -6,7 +6,7 @@
 /*   By: loruzqui <loruzqui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 18:40:10 by loruzqui          #+#    #+#             */
-/*   Updated: 2026/01/06 11:30:12 by loruzqui         ###   ########.fr       */
+/*   Updated: 2026/01/07 17:49:23 by loruzqui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ int main()
 		std::cout << std::endl << YELLOW << "int array:" << RESET << std::endl;
 
 		int	intArr[] = {42, 38, 1, 14, 23, 87};
-		iter(intArr, ARRAY_SIZE(intArr), printElement);
+		iter(intArr, ARRAY_SIZE(intArr), printElement<int>);
+
+		std::cout << std::endl << YELLOW << "int array (+ 1):" << RESET << std::endl;
+		iter(intArr, ARRAY_SIZE(intArr), sumOne);
 	}
 
 	{
@@ -27,7 +30,7 @@ int main()
 		std::cout << std::endl << YELLOW << "char array:" << RESET << std::endl;
 
 		char	charArr[] = {'a', 'b', 'c', 'd'};
-		iter(charArr, ARRAY_SIZE(charArr), printElement);
+		iter(charArr, ARRAY_SIZE(charArr), printElement<char>);
 	}
 
 	{
@@ -36,10 +39,7 @@ int main()
 		std::string	strArr[] = {"Hola", "que", "tal", "soy", "loretooo", ":))"};
 
 		std::cout << std::endl << YELLOW << "string array:" << RESET << std::endl;
-		iter(strArr, ARRAY_SIZE(strArr), printElement);
-
-		std::cout << std::endl << YELLOW << "string array uppercase:" << RESET << std::endl;
-		iter(strArr, ARRAY_SIZE(strArr), upperCase);
+		iter(strArr, ARRAY_SIZE(strArr), printElement<std::string>);
 	}
 
 	{
@@ -49,7 +49,7 @@ int main()
 		Test	testArr[3];
 		for (int i = 0; i < 3; i++)
 			testArr[i].setI(i + 40);
-		iter(testArr, ARRAY_SIZE(testArr), printElement);
+		iter(testArr, ARRAY_SIZE(testArr), printElement<Test>);
 	}
 
 	return (0);

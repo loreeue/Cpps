@@ -6,7 +6,7 @@
 /*   By: loruzqui <loruzqui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 18:40:18 by loruzqui          #+#    #+#             */
-/*   Updated: 2026/01/06 11:48:58 by loruzqui         ###   ########.fr       */
+/*   Updated: 2026/01/07 17:30:54 by loruzqui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,26 +46,20 @@ void	printElement(const T &element)
 	std::cout << "Element: " << BLUE << element << RESET << std::endl;
 }
 
+void	sumOne(int num)
+{
+	std::cout << "Element + 1: " << BLUE << num + 1 << RESET << std::endl;
+}
+
 //iters an array and apply a function to each element
 //array -> direction of the 1st element of the array
 //len -> num elements array
 //func
-template <typename T>
-void	iter(T* array, size_t len, void (*func)(const T &))
+template <typename T, typename F>
+void iter(T* array, const size_t len, F func)
 {
-	if (len <= 0 || !array)
-		return ;
-	for (size_t i = 0; i < len; ++i)
+	for(size_t i = 0; i < len; ++i)
 		func(array[i]);
-}
-
-void	upperCase(const std::string &str)
-{
-	std::string	tmp;
-
-	for (size_t i = 0; i < str.length(); i++)
-		tmp.push_back(std::toupper(str[i]));
-	std:: cout << "Element uppercase: " << BLUE << tmp << RESET << std::endl;
 }
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: loruzqui <loruzqui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 18:41:05 by loruzqui          #+#    #+#             */
-/*   Updated: 2026/01/06 11:55:02 by loruzqui         ###   ########.fr       */
+/*   Updated: 2026/01/07 17:51:15 by loruzqui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,15 @@ Array<T>::~Array()
 
 template <typename T>
 T	&Array<T>::operator[](unsigned int n)
+{
+	if (n >= this->_size)
+		throw Array<T>::OutOfBoundsException();
+	else
+		return (this->_ptr[n]);
+}
+
+template <typename T>
+const T	&Array<T>::operator[](unsigned int i) const
 {
 	if (n >= this->_size)
 		throw Array<T>::OutOfBoundsException();
