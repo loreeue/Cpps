@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loruzqui <loruzqui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: loruzqui < >                               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 18:41:05 by loruzqui          #+#    #+#             */
-/*   Updated: 2026/01/07 17:51:15 by loruzqui         ###   ########.fr       */
+/*   Updated: 2026/01/31 13:22:23 by loruzqui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ T	&Array<T>::operator[](unsigned int n)
 }
 
 template <typename T>
-const T	&Array<T>::operator[](unsigned int i) const
+const T	&Array<T>::operator[](unsigned int n) const
 {
 	if (n >= this->_size)
 		throw Array<T>::OutOfBoundsException();
